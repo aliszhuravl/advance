@@ -1,0 +1,52 @@
+.catalog__pagination {
+  margin-top: 32px;
+  margin-bottom: 80px;
+}
+
+.page-catalog .catalog__pagination  {
+  margin-left: 340px;
+}
+
+.pag__inner {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pages__inner {
+  display: flex;
+  margin: 0 24px;
+  span {
+    width: 48px;
+    height: 48px;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    &:hover {
+      background-color: #D74B4B;
+      color: #fff;
+    }
+  }
+  .active {
+    color: #D74B4B;
+  }
+}
+
+.btn_prev {
+  outline: 0;
+  width: 7px;
+  height: 7px;
+  border-top: transparent;
+  border-left: transparent;
+  border: 1px solid #000;
+  padding: 0;
+  transform: rotate(-45deg);
+  background-color: transparent;
+}
+
+.b_next {
+  transform: rotate(135deg);
+}

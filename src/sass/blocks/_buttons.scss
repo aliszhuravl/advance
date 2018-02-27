@@ -1,0 +1,167 @@
+.btn {
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  height: 50px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #292929;
+  background-color: #292929;
+  font-family: $font-family_bold;
+  text-align: center;
+  white-space: nowrap;
+  text-decoration: none;
+  cursor: pointer;
+  outline: 0;
+  box-shadow: none;
+  padding: 12px 48px;
+  text-transform: uppercase;
+  font-size: 13px;
+  color: #fff;
+  min-width: 230px;
+
+
+  &:hover,
+  &:active,
+  &:focus {
+    outline: 0;
+    text-decoration: none;
+  }
+  
+  &:hover,
+  &:focus {
+    opacity: 0.8;
+  }
+  
+  &:active {
+    background-color: darken($color-gray-10, 5%);
+  }
+}
+
+.btn_disabled {
+  border-color: $color-gray-40;
+  background-color: $color-gray-10;
+  color: $color-gray-60;
+  cursor: default;
+
+  &:hover,
+  &:active,
+  &:focus {
+    border-color: $color-gray-40;
+    background-color: $color-gray-10;
+    color: $color-gray-60;
+  }
+}
+
+.btn_standart {
+  border-color: $color-blue-30;
+  background-color: $color-blue-30;
+  color: $color-white;
+
+  &:hover,
+  &:focus {
+    border-color: $color-blue-50;
+    background-color: $color-blue-50;
+  }
+
+  &:active {
+    border-color: darken($color-blue-50, 5%);
+    background-color: darken($color-blue-50, 5%);
+  }
+}
+
+.btn_red {
+  background-color: #d74b4b;
+  border-color: #d74b4b;
+  padding: 12px 48px;
+  text-transform: uppercase;
+  color: #fff;
+  outline: 0;
+  &:hover,
+  &:focus {
+    background-color: #b34242;
+    border-color: #b34242;
+  }
+}
+
+
+.btn_attach {
+  position: relative;
+  background-color: transparent;
+  padding: 0;
+  border: none;
+  box-shadow: none;
+  outline: 0;
+  color: $color-blue-30;
+  font-family: $font-family_bold;
+  overflow: hidden;
+  cursor: pointer;
+  
+  &:hover {
+    color: $color-blue-50;
+  }
+
+  & > input[type=file] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    opacity: 0;
+    filter: alpha(opacity=0);
+    width: auto;
+    height: auto;
+    font-size: 20px;
+    cursor: pointer;
+  }
+
+  &.btn_disabled > input[type=file] {
+    display: none;
+  }
+}
+
+.btn_upload {
+  overflow: hidden;
+
+  & > input[type=file] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    opacity: 0;
+    filter: alpha(opacity=0);
+    width: auto;
+    height: auto;
+    font-size: 20px;
+    cursor: pointer;
+  }
+
+  &.btn_disabled > input[type=file] {
+    display: none;
+  }
+}
+
+.btn_cart{
+  background-image: url(../img/cart2.png);
+}
+.btn_star{
+  background-image: url(../img/star.png);
+}
+
+.btn_ord {
+  background-image: url(../img/asas.png);
+  background-position: 205px center;
+}
+
+.btn_cont {
+  background-image: url(../img/asas-copy.png);
+  background-position: 205px center;
+}
+
+.btn_dl {
+  background-image: url(../img/listg.png);
+  background-position: 205px center;
+}
+
+.btn_transp {
+  background-color: transparent;
+  border-color: #ccc;
+  color: #555;
+}

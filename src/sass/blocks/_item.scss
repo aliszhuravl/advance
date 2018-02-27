@@ -1,0 +1,391 @@
+.item{
+
+	&__gallery{
+		display: flex;
+		align-items: flex-start;
+		justify-content: flex-start;
+		flex-wrap: wrap;
+
+		img{
+			width: 100%;
+			max-height: 450px;
+			max-width: 450px;
+		}
+
+		&-preview{
+			width: 108px;
+			display: block;
+			margin: 0;
+			padding: 0;
+
+			li{
+				cursor: pointer;
+				display: block;
+				border: 1px solid transparent;
+
+				&:hover{
+					opacity: .7;
+				}
+
+				&.active{
+					//border: 1px solid #ccc;
+				}
+			}
+		}
+
+		&-view{
+			width: calc(100% - 128px);
+			padding: 0 20px;
+		}
+	}
+
+	&__row{
+		width: 100%;
+		display: flex;
+		align-items: flex-start;
+		justify-content: flex-start;
+		border-bottom: 1px solid #ccc;
+		padding: 10px 0;
+		padding-bottom: 50px;
+		flex-wrap: wrap;
+
+		.left{
+			width: 50%;
+		}
+
+		.right{
+			width: 50%;
+		}
+
+		.color{
+			display: inline-block;
+			margin: 0;
+			margin-bottom: 15px;
+			width: 35px;
+			height: 35px;
+		}
+
+		//.order__table{
+		//	padding-bottom: 30px;
+		//	border-bottom: 1px solid #ccc;
+		//}
+
+		.table__row{
+			padding-left: 5px;
+			padding-right: 5px;
+			border-left: 1px solid #ccc;
+			border-right: 1px solid #ccc;
+
+			&:first-child{
+				border-top: 1px solid #ccc;
+			}
+
+			.table__col{
+				margin: auto auto auto auto;
+				justify-content: flex-start;
+
+				&:first-child{
+					justify-content: inherit;
+				}
+
+				&:last-child{
+					justify-content: flex-end;
+				}
+
+				.checkbox{
+					display: inline-block;
+					width: 13px;
+					height: 13px;
+					background: #fff;
+					border: 1px solid #ccc;
+				}
+
+				input[type=checkbox]{
+					display: none;
+
+					&:checked + .checkbox{
+						background-image: url('../img/checked.png');
+						background-position: center;
+						background-repeat: no-repeat;
+					}
+				}
+
+				.count_box{
+					padding: 0;
+					border: 0;
+
+					.minus{
+						width: 25px;
+						text-align: center;
+						border: 1px solid #ccc;
+						font-size: 21px;
+						height: 23px;
+						line-height: 18px;
+					}
+					.count{
+						padding: 0 10px;
+					}
+				}
+			}
+		}
+	}
+
+	&__detail{
+		&-title{
+			margin-top: 0;
+			margin-bottom: 35px;
+		}
+
+		&-caption{
+			color: #292929;
+			margin-bottom: 25px;
+		}
+
+		&-type{
+			display: flex;
+			align-items: center;
+			justify-content: flex-start;
+			flex-wrap: wrap;
+			padding-bottom: 10px;
+			border-bottom: 1px solid #ccc;
+			margin-bottom: 45px;
+		}
+
+		&-color{
+			display: inline-block;
+			text-align: center;
+			margin-right: 15px;
+
+			&.active{
+				.color{
+					border: 6px double #fff;
+					width: 41px;
+					height: 41px;
+					margin-bottom: 11px;
+					position: relative;
+
+					&:before{
+						content: '';
+						position: absolute;
+						top: 0;
+						left: 0;
+						width: 100%;
+						height: 100%;
+						background-image: url('../img/check.png');
+						background-repeat: no-repeat;
+						background-position: center;
+						background-size: auto;
+					}
+				}
+			}
+		}
+
+		&-othercolor{
+			margin-left: auto;
+
+			a{
+				color: #767676;
+				font-size: $font_nano;
+				text-decoration: none;
+				text-transform: uppercase;
+				font-family: "OpenSansSemiBold";
+
+				&:after{
+					content: '+';
+					display: inline-block;
+					margin-left: 15px;
+					font-size: 20px;
+				}
+			}
+		}
+	}
+}
+
+.size-table {
+	.table__col:last-child {
+		width: 10%;
+	}
+	background-color: #f7f7f7;
+	.names_row {
+		display: flex;
+		.table__col {
+			width: 14%;
+		}
+	}
+	.table__row {
+		&:hover {
+			background-color: #fff;
+		}
+	}
+}
+
+.title_show_only {
+	display: none;
+}
+
+.color-rose {
+	background-color: #956c61;	
+}
+
+.color-green {
+	background-color: #957d5b;
+}
+
+@media (max-width: 1120px) {
+	.page-item .item__row .right {
+		width: 100%;
+	}
+	.size-table {
+		.count-box {
+			width: 12%;
+			order: inherit;
+		}
+		.table__col {
+			width: 10%;
+		}
+	}
+	.size-table .names_row .table__col {
+		width: 10%;
+	}
+}
+
+@media (max-width: 980px) {
+	.page-item .item__row .left {
+		width: 100%;
+	}
+}
+
+@media (max-width: 580px) {
+	.col_l,
+	.col_d,
+	.col_h {
+		display: none;
+	}
+	.page-item {
+		.item__detail-color {
+			display: flex;
+			.color_box {
+				width: auto;
+				flex-direction: column;
+			}
+		}
+		.item__gallery {
+			margin-bottom: 30px;
+			flex-direction: column-reverse;
+			.item__gallery-preview {
+				display: flex;
+				width: 100%;
+			}
+			.item__gallery-view {
+				width: 100%;
+			}
+		}
+		.title_show_only {
+			display: block;
+			text-align: center;
+		}
+		.right {
+			.item__detail-size {
+				text-align: center;
+				.btn {
+					width: 100%;
+					background-image: none;
+					padding: 12px 24px 12px 24px !important;
+					&:after {
+						display: none;
+					}
+				}
+				.btn_cart {
+					margin-bottom: 10px;
+				}
+			}
+			.item__detail-title {
+				display: none;
+			}
+			.item__detail-type {
+				flex-direction: column;
+				justify-content: center;
+			}
+			.item__detail-color {
+				margin-bottom: 15px;
+				margin-right: 0;
+				.color_box {
+					margin-right: 20px;
+				}
+			}
+			.item__detail-othercolor {
+				width: 100%;
+				margin-right: auto;
+				border-top: 1px solid #ccc;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+			}
+			.item__detail-caption {
+				text-align: center;
+			}
+		}
+		.size-table {
+			border-bottom: 0;
+			.table__col {
+				width: 20%;
+				.count_box {
+					flex-direction: column;
+					.minus {
+						width: 18px !important;
+						height: 18px !important;
+						font-size: 18px !important;
+						line-height: 14px !important;
+						border-color: transparent !important;
+					}
+				}
+			}
+			.table__col {
+				&:last-child {
+					justify-content: center !important;
+				}
+			}
+			.names_row {
+				.table__col {
+					width: 20%;
+					text-transform: none;
+					font-size: 10px;
+					justify-content: center;
+				}
+			}
+		}
+		.smart__title {
+			text-align: center;
+			padding-bottom: 10px;
+			border-bottom: 1px solid #ccc;
+		}
+		.item__row {
+			border-bottom: 0;
+		}
+		.order_form {
+			.btn {
+				width: 100%;
+			}
+		}
+		.bread {
+			border-bottom: 1px solid #ccc;
+			border-top: 1px solid #ccc;
+			padding: 10px 0;
+			justify-content: center;
+			p {
+				display: none;
+			}
+			.back {
+				display: flex;
+				border-right: 0;
+			}
+		}
+		.trash_col {
+			justify-content: flex-start;
+		}
+		.count-box {
+			justify-content: flex-end;
+			width: 50%;
+		}
+	}
+}

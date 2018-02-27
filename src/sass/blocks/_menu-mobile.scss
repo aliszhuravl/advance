@@ -1,0 +1,262 @@
+.menu-mobile {
+  visibility: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100%;
+  z-index: 110;
+  opacity: 0;
+  overflow-y: auto;
+  .profile {
+    display: flex;
+      .prof__box {
+          img {
+            margin-right: 5px;
+            width: 20px;
+          }
+        .link_gray {
+          .few {
+              display: none;
+            }
+        }
+      }
+  }
+    .accordion {
+      width: 100%;
+      margin-bottom: 0;
+      border-bottom: 0;
+        .accordion__btn {
+          height: 50px;
+          line-height: 14px;
+          align-items: center;
+          border-bottom: 1px solid #e7e7e7;
+          margin-bottom: 10px;
+        }
+          .list {
+            padding: 0;
+            list-style-type: none;
+            margin: 0;
+            li {
+              padding: 10px 0;
+              .link {
+                color: #555;
+                font-family: $font-family_light;
+              }
+            }
+          }
+      .accordion__content {
+        padding-left: 0;
+        border-bottom: 1px solid #e7e7e7;
+      }
+    }
+  .l_block {
+    margin-top: 30px;
+      .link {
+        color: #000;
+        font-size: 18px;
+        font-family: $font-family_light;
+        margin-bottom: 10px;
+      }
+  }
+  .accordion__title {
+    font-family: $font-family;
+    font-size: 15px;
+  }
+}
+
+.menu-mobile__top {
+  p {
+    font-size: 18px;
+    color: #000;
+    font-family: $font-family_light;
+  }
+  .link {
+    color: #000;
+    font-size: 16px;
+    font-family: $font-family_light;
+  }
+}
+
+.mobile__search {
+  display: none;
+}
+
+.menu-mobile_active {
+  display: block;
+}
+
+.menu-mobile_opened {
+  overflow: hidden;
+
+  .menu-mobile {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .menu-mobile__backdrop {
+    opacity: 1;
+  }
+
+  .menu-mobile__inner {
+    animation-name: slideRightOpen;
+    animation-duration: .2s;
+    transition: all .2s;
+  }
+
+  .header,
+  .page,
+  .footer {
+    transform: translateX(calc(100% - 70px));
+    transition: all .2s;
+    will-change: transform;
+  }
+
+  .page-container {
+    overflow: hidden;
+  }
+}
+
+.menu-mobile_closed {
+
+  .menu-mobile {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .menu-mobile__inner {
+    animation-name: slideRightClose;
+    animation-duration: .2s;
+    transition: all .2s;
+  }
+
+  .header,
+  .page,
+  .footer {
+    transform: translateX(0px);
+    transition: all .2s;
+    will-change: transform;
+  }
+}
+
+.menu-mobile__inner {
+  position: relative;
+  width: calc(100% - 60px);
+  min-height: 100%;
+  z-index: 111;
+  background-color: #fff;
+}
+
+.menu-mobile__top {
+  padding: 20px;
+
+  .link_block {
+    width: 100%;
+  }
+}
+
+.menu-mobile__bottom {
+  border-top: 1px solid $color-gray-10;
+
+  .link_tel {
+    padding: 20px;
+    margin-bottom: 0;
+    border-bottom: 1px solid $color-gray-10;
+    margin-left: 15px;
+    &:after {
+      top: 23px;
+
+    }
+  }
+}
+
+.menu-mobile__close {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  z-index: 111;
+  width: 40px;
+  height: 40px;
+  outline: none;
+  border: none;
+  background-color: transparent;
+
+  &:after,
+  &:before {
+    content: '';
+    position: absolute;
+    width: 26px;
+    height: 2px;
+    background-color: #fff;
+    top: 50%;
+    left: 50%;
+  }
+
+  &:after {
+    transform: translate(-50%) rotate(45deg);
+  }
+
+  &:before {
+    transform: translate(-50%) rotate(-45deg);
+  }
+}
+
+.menu-mobile__backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100%;
+  z-index: 110;
+  background-color: rgba(0,0,0,.7);
+  opacity: 0;
+  transition: opacity .2s;
+}
+
+.menu__social {
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
+  flex-direction: row !important;
+  opacity: 0.5;
+  .social__icon {
+    border-color: #000;
+    img {
+      width: 14px;
+    }
+  }
+  img {
+    height: 14px;
+  }
+}
+
+
+.search_box {
+  pointer-events: none;
+  opacity: 0;
+  position: fixed;
+  width: calc(100% - 50px);
+  top: 0;
+  left: -280px;
+  background-color: #fff;
+  height: 60px;
+  transition: left 0.3s;
+  z-index: 99;
+  padding: 5px 20px;
+    input {
+      height: 50px;
+      padding: 5px;
+      width: 100%;
+      box-shadow: none;
+      border-radius: 0;
+      border: 1px solid #ccc;
+    }
+}
+
+
+.vis_search {
+  pointer-events: auto;
+  opacity: 1;
+  left: 0;
+  transition: left 0.3s;
+}

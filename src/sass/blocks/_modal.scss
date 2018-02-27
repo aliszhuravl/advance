@@ -1,0 +1,121 @@
+.popup_wrapper {
+  position: fixed;
+  background: rgba(0, 0, 0, .7);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 99;
+  width: 100%;
+  height: 100%;
+
+  .form__item {
+    display: inline-block;
+    vertical-align: top;
+    width: 100%;
+    height: 45px;
+    padding: 5px 12px;
+    border: 1px solid #ccc;
+    font-size: $font_default;
+    color: #555;
+    background-color: transparent;
+
+      &:focus {
+        outline: 0;
+        border-color: #D74B4B;
+      }
+  }
+
+  .btn {
+    margin-bottom: 10px;
+  }
+  .tabs__buttons {
+    margin-bottom: 30px;
+  }
+}
+
+.wrappershow {
+  display: block;
+}
+
+.popup {
+  width: 320px;
+  background-color: $color-white;
+  position: absolute;
+  transform: translateX(50%);
+  right: 50%;
+  top: 25%;
+  z-index: 4;
+}
+
+.inp-conf {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  input {
+    margin-right: 20px;
+  }
+}
+
+.pop-inner {
+  padding: 40px;
+  position: relative;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.closepop {
+  position: absolute;
+  cursor: pointer;
+  z-index: 9;
+  top: -10px;
+  right: -10px;
+  width: 30px;
+  height: 30px;
+  background-color: #D74B4B;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cross-pop {
+  cursor: pointer;
+}
+
+.poph {
+  font-size: 30px;
+  margin: 0;
+}
+
+.pop-text {
+  margin-bottom: 20px;
+}
+
+.pophide {
+  display: none;
+}
+
+@media (max-width: 800px) {
+  .poph {
+    padding-top: 40px;
+    font-size: 40px;
+  }
+  .popup {
+    width: 100%;
+  }
+  .pop-text {
+    margin-top: 0;
+  }
+}
+
+.error_input {
+  border-bottom: 1px solid red;
+}
+
+.message-block {
+  color: red;
+}

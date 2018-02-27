@@ -1,0 +1,44 @@
+.profile__box {
+  max-width: 60%;
+  margin-bottom: 40px;
+}
+
+.profile_item {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  border-bottom: 1px solid #ccc;
+  padding: 20px 0;
+  &:last-child {
+    border-bottom: 0;
+  }
+}
+
+.name {
+  font-family: $font-family_bold;
+  color: #000;
+  width: 30%;
+  font-size: 17px;
+}
+
+.data {
+  font-size: 17px;
+  font-family: $font-family_light;
+  width: 69%;
+}
+
+@media (max-width: 980px) {
+  .profile__box {
+    max-width: 100%;  }
+}
+
+@media (max-width: 640px) {
+  .name {
+    font-size: 14px;
+    width: 40%;
+  }
+  .data {
+    font-size: 14px;
+    width: 59%;
+  }
+}

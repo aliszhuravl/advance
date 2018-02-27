@@ -1,0 +1,92 @@
+.link {
+  display: inline-block;
+  vertical-align: top;
+  text-decoration: none;
+  transition: color, .2s;
+  color: #d74b4b;
+  font-size: 14px;
+  span {
+    color: #d74b4b !important;
+    font-size: 9px;
+    padding-left: 3px;
+    opacity: 1 !important;
+  }
+
+  svg{
+    display: inline-block;
+    margin-left: 5px;
+  }
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &:focus,
+  &:active {
+    outline: 0;
+    text-decoration: none;
+  }
+}
+
+.link_gray {
+  color: #767676;
+  span {
+    font-size: 13px;
+    color: #d74b4b !important;
+  }
+}
+
+.link_active {
+  color: $color-blue-50;
+}
+
+.link_light {
+  color: $color-blue-10;
+
+  &:hover {
+    color: $color-blue-50;
+  }
+}
+
+.link_dark {
+  color: $font-color_dark;
+
+  &:hover {
+    color: $color-blue-50;
+  }
+}
+
+.link_blue {
+  color: $color-blue-50;
+  
+  &:hover {
+    color: $color-blue-60;
+  }
+}
+
+.link_underlined {
+  text-decoration: underline;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.gray_link {
+  color: #767676;
+  text-decoration: none;
+}
+
+.link_active {
+  color: #d74b4b !important;
+  position: relative;
+  &:after {
+    position: absolute;
+    background-color: #d74b4b;
+    width: 100%;
+    height: 2px;
+    content: '';
+    bottom: -14px;
+    left: 0;
+  }
+}
